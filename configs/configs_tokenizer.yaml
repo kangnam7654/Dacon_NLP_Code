@@ -1,0 +1,6 @@
+files: Null
+vocab_size: 32000
+limit_alphabet: 6000
+min_frequency: 5
+show_progress: True
+special_tokens: ['[BOS]', '[EOS]']
