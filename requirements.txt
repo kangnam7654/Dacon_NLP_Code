@@ -1,6 +1,6 @@
 pandas
+transformers
+rank_bm25
+sklearn
 pytorch
 pytorch-lightning
-transformers
-tokenizers
-sklearn
