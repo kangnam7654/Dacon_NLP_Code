@@ -1,5 +1,10 @@
-model:
-  name: 'facebook/bart-base'
-vocab_size: 32000
 data:
-  n_data: 50000
+  name: 'sample_train.csv'
+model:
+  name: 'roberta-base'
+tokenizer:
+  name: 'microsoft/graphcodebert-base'
+
+#submit:
+#  data:
+#    name: ''
