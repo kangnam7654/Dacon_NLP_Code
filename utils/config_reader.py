@@ -1,4 +1,4 @@
-from common.project_paths import GetPaths
+from utils.common.project_paths import GetPaths
 import yaml
 
 
