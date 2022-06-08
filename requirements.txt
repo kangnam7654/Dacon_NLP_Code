@@ -1,6 +1,10 @@
 pandas
+numpy
 transformers
 rank_bm25
 sklearn
-pytorch
+torch
 pytorch-lightning
+wandb
+matplotlib
+tqdm

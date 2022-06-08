@@ -1,10 +1,43 @@
-data:
-  name: 'sample_train.csv'
-model:
-  name: 'roberta-base'
-tokenizer:
-  name: 'microsoft/graphcodebert-base'
+# for train parts
+train:
+  seed: 42
+  data:
+    name1: 'train_data.csv'
+    name2: 'pre_processed_sample_train.csv'
+  model:
+    model_name: 'microsoft/graphcodebert-base'
+    tokenizer_name: 'microsoft/graphcodebert-base'
+    is_train: True
+    lr: 0.001
+  model_check_point: ['ckpt', 'model_best.ckpt']
+  train_dataloader:
+    batch_size: 8
+    num_workers: 4
+  valid_dataloader:
+    batch_size: 8
+    num_workers: 4
+  model_checkpoint:
+    dirpath: './ckpt'
+    filename: './transfer2'
+    monitor: 'valid_avg_acc'
+    save_top_k: 1
+    save_weights_only: True
+    mode: 'max'
+    save_last: False
+    verbose: True
+  trainer:
+    max_epochs: 100
+    accelerator: 'gpu'
+    gpus: 1
+    precision: 16
+    deterministic: True
+    val_check_interval: 2500
+    num_sanity_val_steps: 0
 
-#submit:
-#  data:
-#    name: ''
+# for inference part
+inference:
+  model:
+    is_train: False
+    model_name: 'microsoft/graphcodebert-base'
+  ckpt:
+    ckpt_name: 'transfer2-v1.ckpt'
