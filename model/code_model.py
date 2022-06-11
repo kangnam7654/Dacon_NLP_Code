@@ -84,7 +84,7 @@ class CodeModel(LightningModule):
     def build_tokenizer(self):
         if self.tokenizer_name:
             tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_name,
-                                                      truncation_side='left')
+                                                      truncation_side='right')
         else:
             print('모델 입력이 없어 "graphcodebert-base"토크나이저를 불러옵니다.')
             tokenizer = AutoTokenizer.from_pretrained("microsoft/graphcodebert-base")

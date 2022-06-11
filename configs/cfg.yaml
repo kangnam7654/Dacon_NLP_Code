@@ -8,8 +8,8 @@ train:
     model_name: 'microsoft/graphcodebert-base'
     tokenizer_name: 'microsoft/graphcodebert-base'
     is_train: True
-    lr: 0.001
-  model_check_point: ['ckpt', 'model_best.ckpt']
+    lr: 0.0001
+  model_check_point: ['ckpt', 'transfer.ckpt']
   train_dataloader:
     batch_size: 8
     num_workers: 4
@@ -40,4 +40,4 @@ inference:
     is_train: False
     model_name: 'microsoft/graphcodebert-base'
   ckpt:
-    ckpt_name: 'transfer2-v1.ckpt'
+    ckpt_name: 'transfer2-v3.ckpt'

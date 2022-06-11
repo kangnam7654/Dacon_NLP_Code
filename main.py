@@ -43,13 +43,13 @@ def main():
     early_stop = EarlyStopping(monitor='valid_avg_acc', verbose=True, patience=10, mode='max')
 
     # 학습
-    trainer = Trainer(max_epochs=config['train']['trainer']['max_epoches'],
+    trainer = Trainer(max_epochs=config['train']['trainer']['max_epochs'],
                       accelerator=config['train']['trainer']['accelerator'],
                       gpus=config['train']['trainer']['gpus'],
                       logger=wandb_logger,
                       callbacks=[lr_monitor, ckpt_callback, early_stop],
                       precision=config['train']['trainer']['precision'],
-                      deterministic=config['train']['trainers']['deterministic'],
+                      deterministic=config['train']['trainer']['deterministic'],
                       val_check_interval=config['train']['trainer']['val_check_interval'],
                       num_sanity_val_steps=config['train']['trainer']['num_sanity_val_steps'],
                       )

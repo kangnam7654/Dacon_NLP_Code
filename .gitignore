@@ -5,6 +5,7 @@
 /custom_tokenizer/vocab
 /data
 /.idea
+*.pyc
 
 #################################
 
